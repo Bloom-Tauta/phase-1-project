@@ -8,9 +8,43 @@ function getFoods() {
     .then(data => {console.log(data)})
 }
 
-// function renderFood() {
+function renderOneFood() {
+    
+let card = document.createElement('li')
+card.classname = 'card'
+card.innerHTML = `
+    <image src="${food.imageURL}"/>
+    <div class = "content">
 
-// }
+
+`
+    document.querySelector('#foods-list').appendChild(card);
+}
+
+function foodsList(foods) {
+    foods.forEach(renderFoods);
+}
+let currentFood;
+function renderFoods(foods) {
+    // constfoodName = document.querySelector('.name')
+    const bar = document.querySelector('foods-list');
+    const spanElement = document.createElement('span');
+    spanElement.innerHTML = foods.name;
+    bar.appendChild(spanElement);
+    spanElement.cursor = 'pointer';
+    spanElement.addEventListener('click', () => {
+        currentFood = foods;
+        showFood(foods);
+    });
+}
+
+function showFood(foods) {
+    const foodsName = document.querySelector('.name');
+    foodsName.innerHTML = foods.name;
+    const foodImg = document.querySelector('#image');
+    foodImg.src = foods.image;
+    // likes go here
+}
 
 let likebtn = document.querySelector('#likebtn');
 let dislikebtn = document.querySelector('#dislikebtn');
@@ -20,7 +54,7 @@ let input2 = document.querySelector('#input2');
 function like(){
     likebtn.addEventListener('click', () => {
     input1.value = parseInt(input1.value) +1;
-    input1.style.color = "#12ff00";
+    input1.style.color = "#07ff13";
     });
 }
 like();
@@ -31,3 +65,14 @@ function dislike() {
     });
 }
 dislike();
+
+const resetLikes = document.getElementById('reset-btn')
+resetLikes.style.cursor = 'pointer';
+resetLikes.addEventListener('click', () => {
+    currentFood.likes=0;
+    showFood(currentFood);
+    div.reset();
+});
+
+
+
