@@ -92,10 +92,6 @@ button:active{
     border-radius: 10px;
 }
 
-
-#submitBtn :hover{
-    color: rgb(8, 8, 8);
-}
 #submitBtn{
     border: 0px;
     background-color: rgb(194, 194, 221);
