@@ -1,25 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    getFoods();
+    renderFoods();
 })
 
-function getFoods() {
-    fetch("http://localhost:3000/foods")
-    .then((resp) => resp.json())
-    .then(data => {console.log(data)})
-}
 
-function renderOneFood() {
-    
-let card = document.createElement('li')
-card.classname = 'card'
-card.innerHTML = `
-    <image src="${food.imageURL}"/>
-    <div class = "content">
-
-
-`
-    document.querySelector('#foods-list').appendChild(card);
-}
 
 function foodsList(foods) {
     foods.forEach(renderFoods);
@@ -75,4 +58,75 @@ resetLikes.addEventListener('click', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault()
+       console.log(e.target.submitBtn.value)
+    });
+});
+
+function buildForm() {
+    let p = document.createElement('p')
+    let btn = document.createElement('button')
+    btn.addEventListener('click', handleDelete)
+    btn.textContent = ('X')
+    p.textContent = `${foodie}`
+    p.appendChild(btn)
+    console.log(p)
+    document.querySelector('#submitBtn').appendChild(p)
+}
+
+function handleDelete(e) {
+    e.target.parentNode.remove()
+}
+
+
+
+function renderFoods(){
+    fetch('http://localhost:3000/foods')
+    .then(res => res.json())
+    .then(data => console.log(data))
+    // .then(foods => foods.forEach(food => renderFoods(food)))
+}
+
+function renderOneFood(food){
+    let card = document.createElement('li')
+    card.className = 'card'
+    card.innerHTML = `
+    <img src"${food.imageUrl}">
+    <div class="content">
+        <h4>${food.name}</h4>
+        <p>
+            ${food.food}
+            ${food.category}
+            ${food.food-group}
+            ${food.classification}
+        </p>
+       <p>
+            <span class="likes-count">${food.likes}</span> Liked
+        <p/> 
+    </div>
+    `
+    document.querySelector("#foods-list").appendChild(card)
+}
+
+
+
+
+function initialize() {
+    // renderFoods()
+    // foods.forEach(food => renderOneFood(food))
+};
+initialize();
+
+function addFood() {
+    fetch('http://localhost:3000/foods', {
+       method: 'POST'
+        headers: {
+            'Content-Type: application/json'
+        },
+        body:JSON.stringify(renderfo)
+    })
+    // .then()
+}
 
