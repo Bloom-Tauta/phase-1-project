@@ -21,6 +21,10 @@ function renderFoods(foods) {
     });
 }
 
+function fetchFoods() {
+    fetch('http://localhost:');
+}
+
 function showFood(foods) {
     const foodsName = document.querySelector('.name');
     foodsName.innerHTML = foods.name;
