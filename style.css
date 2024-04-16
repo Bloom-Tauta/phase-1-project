@@ -1,5 +1,8 @@
 
 body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: sans-serif;
 }
 
@@ -27,12 +30,11 @@ button:active{
     color: #004eff;
     transform: scale(1.2);
 }
-#foods-form.button{
-    font-size: small;
-}
- 
 
-#foods-form{
+.foods-form{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
     max-width: 500px;
     margin: 2rem auto;
     border: 2px solid rgb(253, 252, 252);
@@ -41,7 +43,7 @@ button:active{
     border-radius: 10px;
 }
 
-#submitBtn{
+.submit-btn{
     border: 0px;
     background-color: rgb(101, 168, 255);
     padding: 10px;
@@ -51,7 +53,7 @@ button:active{
     cursor: pointer;
     border-radius: 5px;
 }
-#submitBtn:hover{
+.submit-btn:hover{
         background: rgb(13, 140, 238);
     }
 
@@ -59,7 +61,3 @@ input{
     font-size: 16px;
     border-radius: 5px;
 }
-
-    
-        
-

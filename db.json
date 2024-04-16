@@ -2,7 +2,7 @@
  "foods": [
     {
         "id":"1",
-        "food":"chapati",
+        "name":"chapati",
         "category":"cabohydrate",
         "food-group":"wheat",
         "classification":"plant-based",
@@ -11,7 +11,7 @@
     },
     {
         "id":"2",
-        "food":"beef",
+        "name":"beef",
         "category":"protein",
         "food-group":"meat",
         "classification":"animal-based",
@@ -20,7 +20,7 @@
     },
     {
         "id":"3",
-        "food":"rice",
+        "name":"rice",
         "category":"cabohydrate",
         "food-group":"grain",
         "classification":"plant-based",
@@ -29,7 +29,7 @@
     },
     {
         "id":"4",
-        "food":"fish",
+        "name":"fish",
         "category":"protein",
         "food-group":"meat",
         "classification":"animal-based",
@@ -38,7 +38,7 @@
     },
     {
         "id":"5",
-        "food":"kales",
+        "name":"kales",
         "category":"vegetables",
         "food-group":"vegetable",
         "classification":"plant-based",
@@ -47,7 +47,7 @@
     },
     {
         "id":"6",
-        "food":"cabbage",
+        "name":"cabbage",
         "category":"vegetables",
         "food-group":"vegetable",
         "classification":"plant-based",
